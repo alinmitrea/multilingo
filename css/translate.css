@@ -4,11 +4,11 @@
 }
 
 #translationBox {
-    width: 350px;
+    width: 100%;
 }
 
 #inputBox, #outputBox {
-    width: 350px;
+    width: 100%;
 }
 
 .textEditor {
