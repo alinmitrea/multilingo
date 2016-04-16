@@ -56,10 +56,10 @@ jQuery(function($) {
   var $source = 'en';
   var $target = 'nl';
 
-  function launchTranslation(inputText) {
+  function launchTranslation(inputText, toTranslate) {
     $translating.removeClass('hidden');
     //Extract text to translate
-    var toTranslate = getTextFromHtml($inputTextEditor.html());
+    //var toTranslate = getTextFromHtml($inputTextEditor.html());
     translate($source, $target, toTranslate, function(err, result) {
       $translating.addClass('hidden');
       if (!err) {
@@ -75,28 +75,31 @@ jQuery(function($) {
   function translateSpecific(lang){
     if (lang == "en"){
         //alert(lang);
+        var toTranslate = getTextFromHtml($('#inputTextEditorEN').text());
         $source = lang;
         $target = 'nl';
-        launchTranslation('inputTextEditorNL');
+        launchTranslation('inputTextEditorNL', toTranslate);
         $target = 'fr';
-        launchTranslation('inputTextEditorFR');
+        launchTranslation('inputTextEditorFR', toTranslate);
     }
     if (lang == "fr"){
         //alert(lang);
+        var toTranslate = getTextFromHtml($('#inputTextEditorFR').text());
         $source = lang;
         $target = 'nl';
-        launchTranslation('inputTextEditorNL');
+        launchTranslation('inputTextEditorNL', toTranslate);
         $source = lang;
         $target = 'en';
-        launchTranslation('inputTextEditorEN');
+        launchTranslation('inputTextEditorEN', toTranslate);
     }
     if (lang == "nl"){
         //alert(lang);
+        var toTranslate = getTextFromHtml($('#inputTextEditorNL').text());
          $source = lang;
          $target = 'en';
-         launchTranslation('inputTextEditorEN');
+         launchTranslation('inputTextEditorEN', toTranslate);
          $target = 'fr';
-         launchTranslation('inputTextEditorFR');
+         launchTranslation('inputTextEditorFR', toTranslate);
     }
   }
 

@@ -5,43 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Translation demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="js/translate.js"></script>
 </head>
 <body>
-<table id="translationBox">
+<table id="translationBox" class="container">
     <tr>
-        <td>EN</td>
-        <td id="inputBox">
+        <td class="col-sm-6">EN</td>
+        <td id="inputBox" class="col-sm-6">
             <div id="inputTextEditorEN" contenteditable="true" class="textEditor">
                 man
             </div>
         </td>
-        <td><button type="button" id="translateButtonEN" data-t>Translate</button></td>
+        <td class="col-sm-6"><button type="button" id="translateButtonEN" data-t>Translate</button></td>
         <td id="outputBox">
             <div id="outputTextEditorEN" class="textEditor">
             </div>
         </td>
     </tr>
     <tr>
-        <td>FR</td>
-        <td id="inputBoxFR">
+        <td class="col-sm-6">FR</td>
+        <td id="inputBoxFR" class="col-sm-6" >
             <div id="inputTextEditorFR" contenteditable="true" class="textEditor">
                 man
             </div>
         </td>
-        <td><button type="button" id="translateButtonFR" data-t>Translate</button></td>
+        <td class="col-sm-6"><button type="button" id="translateButtonFR" data-t>Translate</button></td>
     </tr>
     <tr>
-        <td>NL</td>
-        <td id="inputBoxNL">
+        <td class="col-sm-6" >NL</td>
+        <td id="inputBoxNL" class="col-sm-6">
             <div id="inputTextEditorNL" contenteditable="true" class="textEditor">
                 man
             </div>
         </td>
-        <td><button type="button" id="translateButtonNL" data-t>Translate</button></td>
+        <td class="col-sm-6"><button type="button" id="translateButtonNL" data-t>Translate</button></td>
     </tr>
 </table>
 </body>
