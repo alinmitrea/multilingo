@@ -1,0 +1,48 @@
+#source, #target, #translateButton {
+    height: 31px;
+    width: 90px;
+}
+
+#translationBox {
+    width: 350px;
+}
+
+#inputBox, #outputBox {
+    width: 350px;
+}
+
+.textEditor {
+    overflow: auto;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 10px;
+    line-height: normal;
+    height: 100%;
+    max-height: 400px;
+}
+
+#inputTextEditor {
+    margin-right: 2px;
+    border: 1px solid #ddd;
+}
+
+#outputTextEditor {
+    margin-left: 2px;
+    border: 1px solid whitesmoke;
+    background: whitesmoke;
+}
+
+#translating {
+    color: #428bca;
+    font-style: italic;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+#translating.hidden {
+    display:none;
+}
+
+.controls {
+    margin: 5px 20px 5px 2px;
+}
