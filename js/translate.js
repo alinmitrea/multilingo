@@ -72,21 +72,21 @@ jQuery(function($) {
     });
   }
 
-  function launchTranslation(source){
-    if (source == "en"){
-        alert(source);
-    } else if (source == "fr"){
-        alert(source);
-    } else if (source == "nl"){
-        alert(source);
+  function translateSpecific(lang){
+    if (lang == "en"){
+        alert(lang);
     }
-    return true;
-
+    if (lang == "fr"){
+        alert(lang);
+    }
+    if (lang == "nl"){
+        alert(lang);
+    }
   }
 
   $('#translateButton').click(launchTranslation);
-  $('#translateButtonEN').click(launchTranslation('en'));
-  $('#translateButtonEN').click(launchTranslation('fr'));
-  $('#translateButtonEN').click(launchTranslation('nl'));
-  launchTranslation();
+  $('#translateButtonEN').click(function(){translateSpecific('en');});
+  $('#translateButtonFR').click(function(){translateSpecific('fr');});
+  $('#translateButtonNL').click(function(){translateSpecific('nl');});
+//  launchTranslation();
 });
