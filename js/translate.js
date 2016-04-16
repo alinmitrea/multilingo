@@ -53,18 +53,18 @@ jQuery(function($) {
   var $inputTextEditor = $('#inputTextEditorEN');
   var $outputTextEditor = $('#outputTextEditorEN');
   var $translating = $('#translating');
-  var $source = $('#source');
-  var $target = $('#target');
+  var $source = 'en';
+  var $target = 'nl';
 
-  function launchTranslation() {
+  function launchTranslation(inputText) {
     $translating.removeClass('hidden');
     //Extract text to translate
     var toTranslate = getTextFromHtml($inputTextEditor.html());
-    translate($source.val(), $target.val(), toTranslate, function(err, result) {
+    translate($source, $target, toTranslate, function(err, result) {
       $translating.addClass('hidden');
       if (!err) {
         //Show result
-        $outputTextEditor.text(result);
+        $('#' + inputText).text(result);
       } else {
         if (console.log)
             console.log('Error while doing translation: ' + err);
@@ -74,17 +74,33 @@ jQuery(function($) {
 
   function translateSpecific(lang){
     if (lang == "en"){
-        alert(lang);
+        //alert(lang);
+        $source = lang;
+        $target = 'nl';
+        launchTranslation('inputTextEditorNL');
+        $target = 'fr';
+        launchTranslation('inputTextEditorFR');
     }
     if (lang == "fr"){
-        alert(lang);
+        //alert(lang);
+        $source = lang;
+        $target = 'nl';
+        launchTranslation('inputTextEditorNL');
+        $source = lang;
+        $target = 'en';
+        launchTranslation('inputTextEditorEN');
     }
     if (lang == "nl"){
-        alert(lang);
+        //alert(lang);
+         $source = lang;
+         $target = 'en';
+         launchTranslation('inputTextEditorEN');
+         $target = 'fr';
+         launchTranslation('inputTextEditorFR');
     }
   }
 
-  $('#translateButton').click(launchTranslation);
+  //$('#translateButton').click(launchTranslation);
   $('#translateButtonEN').click(function(){translateSpecific('en');});
   $('#translateButtonFR').click(function(){translateSpecific('fr');});
   $('#translateButtonNL').click(function(){translateSpecific('nl');});
