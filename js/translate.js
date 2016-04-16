@@ -64,7 +64,7 @@ jQuery(function($) {
       $translating.addClass('hidden');
       if (!err) {
         //Show result
-        $('#' + inputText).text(result);
+        $('#' + inputText).val(result);
       } else {
         if (console.log)
             console.log('Error while doing translation: ' + err);
@@ -75,7 +75,7 @@ jQuery(function($) {
   function translateSpecific(lang){
     if (lang == "en"){
         //alert(lang);
-        var toTranslate = getTextFromHtml($('#inputTextEditorEN').text());
+        var toTranslate = getTextFromHtml($('#inputTextEditorEN').val());
         $source = lang;
         $target = 'nl';
         launchTranslation('inputTextEditorNL', toTranslate);
@@ -84,7 +84,7 @@ jQuery(function($) {
     }
     if (lang == "fr"){
         //alert(lang);
-        var toTranslate = getTextFromHtml($('#inputTextEditorFR').text());
+        var toTranslate = getTextFromHtml($('#inputTextEditorFR').val());
         $source = lang;
         $target = 'nl';
         launchTranslation('inputTextEditorNL', toTranslate);
@@ -94,7 +94,7 @@ jQuery(function($) {
     }
     if (lang == "nl"){
         //alert(lang);
-        var toTranslate = getTextFromHtml($('#inputTextEditorNL').text());
+        var toTranslate = getTextFromHtml($('#inputTextEditorNL').val());
          $source = lang;
          $target = 'en';
          launchTranslation('inputTextEditorEN', toTranslate);
@@ -107,5 +107,20 @@ jQuery(function($) {
   $('#translateButtonEN').click(function(){translateSpecific('en');});
   $('#translateButtonFR').click(function(){translateSpecific('fr');});
   $('#translateButtonNL').click(function(){translateSpecific('nl');});
+  $('#inputTextEditorEN').keypress(function (e) {
+    if (e.which == 13) {
+      translateSpecific('en');
+    }
+  });
+  $('#inputTextEditorFR').keypress(function (e) {
+      if (e.which == 13) {
+        translateSpecific('fr');
+      }
+    });
+   $('#inputTextEditorNL').keypress(function (e) {
+       if (e.which == 13) {
+         translateSpecific('nl');
+       }
+     });
   translateSpecific('en');
 });
