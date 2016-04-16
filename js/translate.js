@@ -107,5 +107,5 @@ jQuery(function($) {
   $('#translateButtonEN').click(function(){translateSpecific('en');});
   $('#translateButtonFR').click(function(){translateSpecific('fr');});
   $('#translateButtonNL').click(function(){translateSpecific('nl');});
-//  launchTranslation();
+  translateSpecific('en');
 });
