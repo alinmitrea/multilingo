@@ -5,7 +5,7 @@ jQuery(function($) {
   function translate(source, target, content, callback) {
     $.ajax({
       method:'GET',
-      url: 'https://api-platform.systran.net/translation/text/translate?key=e4d5507f-e0e2-4312-9c5e-c9b52f8605e9',
+      url: 'https://api-platform.systran.net/translation/text/translate?key=2f87f09d-4cc0-4ea3-af8e-5efce9a7e139',
       dataType: 'text',
       data: {
         source: source,
@@ -75,7 +75,7 @@ jQuery(function($) {
   function translateSpecific(lang){
     if (lang == "en"){
         //alert(lang);
-        var toTranslate = getTextFromHtml($('#inputTextEditorEN').val());
+        var toTranslate = $('#inputTextEditorEN').val();
         $source = lang;
         $target = 'nl';
         launchTranslation('inputTextEditorNL', toTranslate);
@@ -84,7 +84,7 @@ jQuery(function($) {
     }
     if (lang == "fr"){
         //alert(lang);
-        var toTranslate = getTextFromHtml($('#inputTextEditorFR').val());
+        var toTranslate = $('#inputTextEditorFR').val();
         $source = lang;
         $target = 'nl';
         launchTranslation('inputTextEditorNL', toTranslate);
@@ -94,7 +94,7 @@ jQuery(function($) {
     }
     if (lang == "nl"){
         //alert(lang);
-        var toTranslate = getTextFromHtml($('#inputTextEditorNL').val());
+        var toTranslate = $('#inputTextEditorNL').val();
          $source = lang;
          $target = 'en';
          launchTranslation('inputTextEditorEN', toTranslate);
