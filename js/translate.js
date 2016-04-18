@@ -107,6 +107,11 @@ jQuery(function($) {
   $('#translateButtonEN').click(function(){translateSpecific('en');});
   $('#translateButtonFR').click(function(){translateSpecific('fr');});
   $('#translateButtonNL').click(function(){translateSpecific('nl');});
+  $('#clearAll').click(function(){
+    $('#inputTextEditorEN').val('');
+    $('#inputTextEditorFR').val('');
+    $('#inputTextEditorNL').val('');
+  });
   $('#inputTextEditorEN').keypress(function (e) {
     if (e.which == 13) {
       translateSpecific('en');
@@ -117,10 +122,11 @@ jQuery(function($) {
         translateSpecific('fr');
       }
     });
-   $('#inputTextEditorNL').keypress(function (e) {
+  $('#inputTextEditorNL').keypress(function (e) {
        if (e.which == 13) {
          translateSpecific('nl');
        }
      });
-  translateSpecific('en');
-});
+   translateSpecific('en');
+  });
+
